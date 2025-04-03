@@ -1,6 +1,6 @@
-# 🫀 API de Predicción de Riesgo Cardiovascular con Lógica Difusa
+# 🫀 API de Predicción de Riesgo Cardiovascular con Lógica Borroso
 
-Este proyecto implementa una API REST construida con **FastAPI** que predice el **riesgo cardiovascular** de un paciente utilizando un modelo difuso tipo **Mamdani**. Las predicciones se almacenan en una base de datos **MySQL**.
+Este proyecto implementa una API REST construida con **FastAPI** que predice el **riesgo cardiovascular** de un paciente utilizando un modelo borroso tipo **Mamdani**. Las predicciones se almacenan en una base de datos **MySQL**.
 
 
 ## 🚀 Tecnologías utilizadas
