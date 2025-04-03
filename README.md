@@ -5,7 +5,7 @@ Este proyecto implementa una API REST construida con **FastAPI** que predice el 
 
 ## 🚀 Tecnologías utilizadas
 
-- Python 3.12  
+- Python 3.11  
 - FastAPI  
 - Scikit-Fuzzy  
 - Uvicorn  
