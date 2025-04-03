@@ -19,20 +19,20 @@ Este proyecto implementa una API REST construida con **FastAPI** que predice el 
 ### 1. Clonar el repositorio
 
 ```
-git clone https://github.com/tu-usuario/fuzzy-api.git
-cd fuzzy-api
+git clone https://github.com/tu-usuario/fuzzy-cardiorisk-api.git
+cd fuzzy-cardiorisk-api
 ```
 
 ### 2. Crear y activar un entorno virtual
 
 ```
-conda create -n fuzzy-api python=3.12
-conda activate fuzzy-api
+conda create -n fuzzy-cardiorisk-api python=3.11
+conda activate fuzzy-cardiorisk-api
 ```
 
 ### 3. Instalar las dependencias
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -49,7 +49,7 @@ DB_NAME=cardiorisk_api
 
 ## 🧪 Ejecución local
 
-```bash
+```
 uvicorn main:app --reload
 ```
 
@@ -108,9 +108,9 @@ CREATE TABLE predicciones (
 );
 ```
 
-## 🧠 Modelo difuso Mamdani
+## 🧠 Modelo borroso Mamdani
 
-El sistema experto usa lógica difusa con funciones de membresía triangulares y reglas del tipo:
+El sistema experto usa lógica borrosa con funciones de membresía triangulares y reglas del tipo:
 
 ```
 Si presión es alta Y colesterol es alto Y edad es mayor, entonces riesgo es alto
@@ -120,7 +120,7 @@ El modelo está definido en el archivo `fuzzy_model.py`.
 
 ---
 
-## ❓¿Por qué lógica difusa?
+## ❓¿Por qué lógica borrosa?
 
 Fuzzy Logic permite tomar decisiones con base en **conocimiento experto humano**, sin necesidad de grandes volúmenes de datos. Es ideal en contextos médicos donde se requiere **interpretabilidad**, manejo de **incertidumbre lingüística** y explicaciones basadas en reglas.
 
@@ -130,7 +130,7 @@ Fuzzy Logic permite tomar decisiones con base en **conocimiento experto humano**
 
 Este proyecto utiliza un archivo `.env` para mantener las credenciales fuera del código. Recuerda incluir `.env` en tu `.gitignore`.
 
-```gitignore
+```
 .env
 ```
 
