@@ -8,8 +8,6 @@ from src.api.database import get_connection
 
 
 
-modelo = joblib.load("modelo_tree_tuneado.pkl")
-
 app = FastAPI()
 
 class DatosEntrada(BaseModel):
@@ -43,6 +41,7 @@ def predict(data: DatosEntrada) -> dict:
 
         ]])
 
+    modelo = joblib.load("modelo_tree_tuneado.pkl")
     resultado = modelo.predict(entrada)[0]
     
     conn = get_connection()
@@ -79,5 +78,4 @@ def predict(data: DatosEntrada) -> dict:
     return {
         "input": data.dict(),
         "riesgo_cardiovascular": resultado
-    }
-
+        }
