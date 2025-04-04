@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from fuzzy_model import predecir
+import joblib
+import numpy as np
 from database import get_connection
+
+
+modelo = joblib.load("modelos/modelo_tree_tuneado.pkl")
 
 app = FastAPI()
 
@@ -25,14 +29,19 @@ def check_db():
 
 @app.post("/predict")
 def predict(data: DatosEntrada) -> dict:
-    resultado = predecir(
+    entrada = np.array([[
+
         data.presion_sistolica,
         data.colesterol_total,
         data.indice_masa_corporal,
         data.edad,
         data.actividad_fisica,
         data.cigarrillos_por_dia
-    )
+
+        ]])
+
+    resultado = modelo.predict(entrada)[0]
+    
     conn = get_connection()
     cursor = conn.cursor()
 
