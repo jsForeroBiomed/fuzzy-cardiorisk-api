@@ -2,10 +2,13 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import numpy as np
-from database import get_connection
+import sys
+import  os
+from src.api.database import get_connection
 
 
-modelo = joblib.load("modelos/modelo_tree_tuneado.pkl")
+
+modelo = joblib.load("modelo_tree_tuneado.pkl")
 
 app = FastAPI()
 
