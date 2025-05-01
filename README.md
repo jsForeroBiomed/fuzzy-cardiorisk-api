@@ -20,6 +20,13 @@ Las predicciones se almacenan automáticamente en una base de datos **MySQL**.
 - MySQL Connector  
 - Python Dotenv
 
+## 🌐 Prueba de modelo desplegado en Railway y repositorio de GitHub
+Accede a la documentación de Swagger de la API pública:
+🔗 [https://fuzzy-cardiorisk-api-production.up.railway.app/docs](https://fuzzy-cardiorisk-api-production.up.railway.app/docs)
+
+Accede al repositorio de GitHub:
+🔗 [https://github.com/jsForeroBiomed/fuzzy-cardiorisk-api](https://github.com/jsForeroBiomed/fuzzy-cardiorisk-api)
+
 ## 📦 Instalación
 
 ### 1. Clonar el repositorio
@@ -50,14 +57,6 @@ DB_USER=root
 DB_PASSWORD=tu_contraseña
 DB_NAME=cardiorisk_api
 ```
----
-
-## 🌐 Prueba de modelo desplegado en Railway y repositorio de GitHub
-Accede a la documentación de Swagger de la API pública:
-🔗 [https://fuzzy-cardiorisk-api-production.up.railway.app/docs](https://fuzzy-cardiorisk-api-production.up.railway.app/docs)
-
-Accede al repositorio de GitHub:
-🔗 [https://github.com/jsForeroBiomed/fuzzy-cardiorisk-api](https://github.com/jsForeroBiomed/fuzzy-cardiorisk-api)
 
 ---
 
