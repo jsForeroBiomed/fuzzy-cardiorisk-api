@@ -32,53 +32,52 @@ def check_db():
 
 @app.post("/predict")
 def predict(data: DatosEntrada) -> dict:
-    return {"message": "Funciona el endpoint POST"}
-#     entrada = np.array([[
-# 
-#         data.presion_sistolica,
-#         data.colesterol_total,
-#         data.indice_masa_corporal,
-#         data.edad,
-#         data.actividad_fisica,
-#         data.cigarrillos_por_dia
-# 
-#         ]])
-# 
-#     modelo = joblib.load("modelo_tree_tuneado.pkl")
-#     resultado = modelo.predict(entrada)[0]
-#     
-#     conn = get_connection()
-#     cursor = conn.cursor()
-# 
-# 
-#     query = """
-#         INSERT INTO predicciones (
-#             presion_sistolica,
-#             colesterol_total,
-#             indice_masa_corporal,
-#             edad,
-#             actividad_fisica,
-#             cigarrillos_por_dia,
-#             riesgo
-#         ) VALUES (%s, %s, %s, %s, %s, %s, %s)
-#     """
-# 
-#     values = (
-#         data.presion_sistolica,
-#         data.colesterol_total,
-#         data.indice_masa_corporal,
-#         data.edad,
-#         data.actividad_fisica,
-#         data.cigarrillos_por_dia,
-#         resultado
-#     )
-# 
-#     cursor.execute(query, values)
-#     conn.commit()
-#     cursor.close()
-#     conn.close()
-# 
-#     return {
-#         "input": data.dict(),
-#         "riesgo_cardiovascular": resultado
-#         }
+    entrada = np.array([[
+
+        data.presion_sistolica,
+        data.colesterol_total,
+        data.indice_masa_corporal,
+        data.edad,
+        data.actividad_fisica,
+        data.cigarrillos_por_dia
+
+        ]])
+
+    modelo = joblib.load("modelo_tree_tuneado.pkl")
+    resultado = modelo.predict(entrada)[0]
+    
+    conn = get_connection()
+    cursor = conn.cursor()
+
+
+    query = """
+        INSERT INTO predicciones (
+            presion_sistolica,
+            colesterol_total,
+            indice_masa_corporal,
+            edad,
+            actividad_fisica,
+            cigarrillos_por_dia,
+            riesgo
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+    """
+
+    values = (
+        data.presion_sistolica,
+        data.colesterol_total,
+        data.indice_masa_corporal,
+        data.edad,
+        data.actividad_fisica,
+        data.cigarrillos_por_dia,
+        resultado
+    )
+
+    cursor.execute(query, values)
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return {
+        "input": data.dict(),
+        "riesgo_cardiovascular": resultado
+        }
